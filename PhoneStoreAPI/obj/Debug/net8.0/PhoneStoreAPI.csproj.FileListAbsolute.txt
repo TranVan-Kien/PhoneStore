@@ -167,3 +167,4 @@ D:\WebApi\PhoneStore\PhoneStoreAPI\bin\Debug\net8.0\PhoneStoreAPI.runtimeconfig.
 D:\WebApi\PhoneStore\PhoneStoreAPI\bin\Debug\net8.0\PhoneStoreAPI.pdb
 D:\WebApi\PhoneStore\PhoneStoreAPI\obj\Debug\net8.0\PhoneStoreAPI.genruntimeconfig.cache
 D:\WebApi\PhoneStore\PhoneStoreAPI\obj\Debug\net8.0\ref\PhoneStoreAPI.dll
+D:\WebApi\PhoneStore\PhoneStoreAPI\obj\Debug\net8.0\PhoneStoreAPI.sourcelink.json

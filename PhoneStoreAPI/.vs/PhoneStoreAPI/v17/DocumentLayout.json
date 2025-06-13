@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7AD2A82A-9329-4DF4-AFA7-06C28B1A7FA5}|PhoneStoreAPI.csproj|d:\\webapi\\phonestore\\phonestoreapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -45,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -81,55 +81,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAcwCgAAAAqAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAYwGUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T08:31:52.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "Models\\LoginModel.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\LoginModel.cs",
               "RelativeToolTip": "Models\\LoginModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T08:26:25.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T08:26:25.179Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABGAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowBUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T08:24:43.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T08:24:43.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "RegisterModel.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\RegisterModel.cs",
               "RelativeDocumentMoniker": "Models\\RegisterModel.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Models\\RegisterModel.cs",
               "RelativeToolTip": "Models\\RegisterModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAkwBcAAAAOAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAA7wCEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T08:25:23.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T08:25:23.9Z"
             },
             {
               "$type": "Document",
@@ -155,28 +152,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T08:27:38.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\WebApi\\PhoneStore\\PhoneStoreAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCIAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T08:27:57.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T08:27:57.448Z"
             }
           ]
         },

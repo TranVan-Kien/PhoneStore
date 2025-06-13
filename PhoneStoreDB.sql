@@ -1,16 +1,24 @@
-﻿CREATE DATABASE PhoneStoreDB;
+﻿-- Xóa cơ sở dữ liệu nếu tồn tại
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'PhoneStoreDB')
+BEGIN
+    DROP DATABASE PhoneStoreDB;
+END
+GO
+
+-- Tạo cơ sở dữ liệu
+CREATE DATABASE PhoneStoreDB;
 GO
 
 USE PhoneStoreDB;
 GO
 
--- Bảng Users
+-- Tạo bảng Users
 CREATE TABLE Users (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Id UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Fullname NVARCHAR(100) NOT NULL,
     Email NVARCHAR(255) NOT NULL UNIQUE,
     PasswordHash NVARCHAR(255) NOT NULL,
-    PhoneNumber NVARCHAR(20),
+    PhoneNumber NVARCHAR(20) NOT NULL,
     Gender TINYINT,
     BirthDate DATE,
     IsAgree BIT NOT NULL DEFAULT 0,
@@ -21,14 +29,15 @@ CREATE TABLE Users (
     UpdatedAt DATETIME DEFAULT GETDATE()
 );
 
-INSERT INTO Users (Fullname, Email, PasswordHash, PhoneNumber, Gender, BirthDate, IsAgree, Photo, Activated, Admin, CreatedAt, UpdatedAt) VALUES
-(N'Nguyễn Văn A', 'nva@gmail.com', 'hashed_pass123', '0901234567', 0, '1990-05-15', 1, 'photo1.jpg', 1, 0, '2025-06-11 14:00:00', '2025-06-11 14:00:00'),
-(N'Trần Thị B', 'ttb@gmail.com', 'hashed_pass456', '0912345678', 1, '1995-08-20', 1, 'photo2.jpg', 1, 0, '2025-06-11 14:05:00', '2025-06-11 14:05:00'),
-(N'Lê Văn C', 'lvc@gmail.com', 'hashed_pass789', '0923456789', 2, '1988-03-10', 1, 'photo3.jpg', 1, 1, '2025-06-11 14:10:00', '2025-06-11 14:10:00'),
-(N'Phạm Thị D', 'ptd@yahoo.com', 'hashed_pass101', '0934567890', 1, '1992-11-25', 1, 'photo4.jpg', 1, 0, '2025-06-11 14:15:00', '2025-06-11 14:15:00'),
-(N'Hoàng Văn E', 'hve@hotmail.com', 'hashed_pass202', '0945678901', 0, '1985-07-30', 1, 'photo5.jpg', 1, 0, '2025-06-11 14:20:00', '2025-06-11 14:20:00');
+-- Thêm dữ liệu mẫu cho bảng Users
+INSERT INTO Users (Id, Fullname, Email, PasswordHash, PhoneNumber, Gender, BirthDate, IsAgree, Photo, Activated, Admin, CreatedAt, UpdatedAt) VALUES
+(NEWID(), N'Nguyễn Văn A', 'nva@gmail.com', 'hashed_pass123', '0901234567', 0, '1990-05-15', 1, 'photo1.jpg', 1, 0, '2025-06-11 14:00:00', '2025-06-11 14:00:00'),
+(NEWID(), N'Trần Thị B', 'ttb@gmail.com', 'hashed_pass456', '0912345678', 1, '1995-08-20', 1, 'photo2.jpg', 1, 0, '2025-06-11 14:05:00', '2025-06-11 14:05:00'),
+(NEWID(), N'Lê Văn C', 'lvc@gmail.com', 'hashed_pass789', '0923456789', 2, '1988-03-10', 1, 'photo3.jpg', 1, 1, '2025-06-11 14:10:00', '2025-06-11 14:10:00'),
+(NEWID(), N'Phạm Thị D', 'ptd@yahoo.com', 'hashed_pass101', '0934567890', 1, '1992-11-25', 1, 'photo4.jpg', 1, 0, '2025-06-11 14:15:00', '2025-06-11 14:15:00'),
+(NEWID(), N'Hoàng Văn E', 'hve@hotmail.com', 'hashed_pass202', '0945678901', 0, '1985-07-30', 1, 'photo5.jpg', 1, 0, '2025-06-11 14:20:00', '2025-06-11 14:20:00');
 
--- Bảng Categories
+-- Tạo bảng Categories
 CREATE TABLE Categories (
     Id INT PRIMARY KEY,
     Name NVARCHAR(50),
@@ -39,7 +48,7 @@ INSERT INTO Categories (Id, Name, NameVN) VALUES
 (1, 'Smartphones', N'Điện thoại'),
 (2, 'Phone Accessories', N'Phụ kiện điện thoại');
 
--- Bảng Products
+-- Tạo bảng Products
 CREATE TABLE Products (
     Id INT PRIMARY KEY,
     Name NVARCHAR(50),
@@ -66,26 +75,33 @@ INSERT INTO Products (Id, Name, UnitPrice, Image, AvailableDate, Available, Cate
 (9, 'Phone Case iPhone 14', 500000, 'caseiphone14.jpg', '2023-09-10', 1, 2, 300, N'Ốp lưng chính hãng cho iPhone 14', 250.5, 0),
 (10, 'Screen Protector', 300000, 'screenprotector.jpg', '2023-05-01', 1, 2, 250, N'Miếng dán màn hình chống xước', 200.3, 0);
 
--- Bảng Orders
+-- Tạo bảng Orders
 CREATE TABLE Orders (
     Id INT PRIMARY KEY,
-    CustomerId INT FOREIGN KEY REFERENCES Users(Id),
+    CustomerId UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Users(Id),
     OrderDate DATETIME,
     Address NVARCHAR(60),
     Amount FLOAT,
     Description NVARCHAR(1000)
 );
 
-INSERT INTO Orders (Id, CustomerId, OrderDate, Address, Amount, Description) VALUES
-(1, 1, '2025-06-11 14:30:00', N'123 Đường A, TP.HCM', 20000000, N'Đơn hàng iPhone 14'),
-(2, 2, '2025-06-11 14:35:00', N'456 Đường B, Hà Nội', 20500000, N'Đơn hàng iPhone 14 + Wireless Charger'),
-(3, 3, '2025-06-11 14:40:00', N'789 Đường C, Đà Nẵng', 18000000, N'Đơn hàng Samsung Galaxy S23'),
-(4, 4, '2025-06-11 14:45:00', N'101 Đường D, Cần Thơ', 5200000, N'Đơn hàng AirPods Pro'),
-(5, 5, '2025-06-11 14:50:00', N'202 Đường E, Hải Phòng', 1500000, N'Đơn hàng Wireless Charger'),
-(6, 1, '2025-06-11 15:00:00', N'123 Đường A, TP.HCM', 14000000, N'Đơn hàng Xiaomi 13'),
-(7, 2, '2025-06-11 15:05:00', N'456 Đường B, Hà Nội', 1700000, N'Đơn hàng Phone Case iPhone 14');
+-- Thêm dữ liệu mẫu cho bảng Orders
+DECLARE @User1 UNIQUEIDENTIFIER = (SELECT Id FROM Users WHERE Email = 'nva@gmail.com');
+DECLARE @User2 UNIQUEIDENTIFIER = (SELECT Id FROM Users WHERE Email = 'ttb@gmail.com');
+DECLARE @User3 UNIQUEIDENTIFIER = (SELECT Id FROM Users WHERE Email = 'lvc@gmail.com');
+DECLARE @User4 UNIQUEIDENTIFIER = (SELECT Id FROM Users WHERE Email = 'ptd@yahoo.com');
+DECLARE @User5 UNIQUEIDENTIFIER = (SELECT Id FROM Users WHERE Email = 'hve@hotmail.com');
 
--- Bảng OrderDetails
+INSERT INTO Orders (Id, CustomerId, OrderDate, Address, Amount, Description) VALUES
+(1, @User1, '2025-06-11 14:30:00', N'123 Đường A, TP.HCM', 20000000, N'Đơn hàng iPhone 14'),
+(2, @User2, '2025-06-11 14:35:00', N'456 Đường B, Hà Nội', 20500000, N'Đơn hàng iPhone 14 + Wireless Charger'),
+(3, @User3, '2025-06-11 14:40:00', N'789 Đường C, Đà Nẵng', 18000000, N'Đơn hàng Samsung Galaxy S23'),
+(4, @User4, '2025-06-11 14:45:00', N'101 Đường D, Cần Thơ', 5200000, N'Đơn hàng AirPods Pro'),
+(5, @User5, '2025-06-11 14:50:00', N'202 Đường E, Hải Phòng', 1500000, N'Đơn hàng Wireless Charger'),
+(6, @User1, '2025-06-11 15:00:00', N'123 Đường A, TP.HCM', 14000000, N'Đơn hàng Xiaomi 13'),
+(7, @User2, '2025-06-11 15:05:00', N'456 Đường B, Hà Nội', 1700000, N'Đơn hàng Phone Case iPhone 14');
+
+-- Tạo bảng OrderDetails
 CREATE TABLE OrderDetails (
     Id INT PRIMARY KEY,
     OrderId INT FOREIGN KEY REFERENCES Orders(Id),
@@ -95,6 +111,7 @@ CREATE TABLE OrderDetails (
     Discount FLOAT
 );
 
+-- Thêm dữ liệu mẫu cho bảng OrderDetails
 INSERT INTO OrderDetails (Id, OrderId, ProductId, UnitPrice, Quantity, Discount) VALUES
 (1, 1, 1, 20000000, 1, 0.0),
 (2, 2, 1, 20000000, 1, 0.0),

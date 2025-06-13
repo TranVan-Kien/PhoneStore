@@ -24,12 +24,14 @@ namespace PhoneStoreAPI.Models
         [Phone(ErrorMessage = "Invalid phone number format.")]
         public string PhoneNumber { get; set; }
 
-        public byte? Gender { get; set; } // 0 = Male, 1 = Female, 2 = Other
+        public byte? Gender { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime? BirthDate { get; set; }
 
         [Required(ErrorMessage = "You must agree to the terms.")]
         public bool IsAgree { get; set; }
+        public bool Admin { get; set; }
+
     }
 }

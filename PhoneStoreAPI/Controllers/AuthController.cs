@@ -20,22 +20,44 @@ namespace PhoneStoreAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
+            // Kiểm tra ModelState
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Values
-                                        .SelectMany(v => v.Errors)
-                                        .Select(e => e.ErrorMessage)
-                                        .ToList();
-                return BadRequest(new { Message = "Validation failed.", Errors = errors });
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                return BadRequest(new
+                {
+                    Success = false,
+                    Message = "Validation failed.",
+                    Errors = errors
+                });
+            }
+            // Kiểm tra đã đồng ý điều khoản chưa
+            if (model.IsAgree != true)
+            {
+                return BadRequest(new
+                {
+                    Success = false,
+                    Message = "You must agree to the terms and conditions.",
+                    Errors = new[] { "IsAgree must be true." }
+                });
             }
 
-            // Check if the email already exists
+            // Kiểm tra email đã tồn tại
             bool emailExists = await _context.Users.AnyAsync(u => u.Email == model.Email);
             if (emailExists)
             {
-                return BadRequest(new { Message = "Email already exists." });
+                return BadRequest(new
+                {
+                    Success = false,
+                    Message = "Email already exists.",
+                    Errors = new[] { "The email address is already registered." }
+                });
             }
 
+            // Tạo đối tượng User
             var user = new User
             {
                 Fullname = model.Fullname,
@@ -45,15 +67,41 @@ namespace PhoneStoreAPI.Controllers
                 Gender = model.Gender,
                 BirthDate = model.BirthDate,
                 IsAgree = model.IsAgree,
+                Admin = model.Admin , 
                 Activated = true,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            try
+            {
+                // Thêm user vào cơ sở dữ liệu
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
 
-            return Ok(new { Message = "Registration successful." });
+                // Trả về phản hồi thành công
+                return Ok(new
+                {
+                    Success = true,
+                    Message = "Registration successful.",
+                    Data = new
+                    {
+                        UserId = user.Id,
+                        Fullname = user.Fullname,
+                        Email = user.Email
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi cơ sở dữ liệu hoặc lỗi bất ngờ
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "An error occurred while registering the user.",
+                    Errors = new[] { ex.Message } // Chỉ trả về chi tiết lỗi trong môi trường phát triển
+                });
+            }
         }
 
 
