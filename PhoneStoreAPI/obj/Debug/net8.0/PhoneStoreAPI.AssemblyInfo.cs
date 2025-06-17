@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhoneStoreAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bad8c44bc71d33954618d3b9abacea55effb8ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6455d3be988521b9683cdcd4ddcc940780a1a6c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhoneStoreAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhoneStoreAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

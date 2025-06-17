@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace PhoneStoreAPI.Models
 {
@@ -11,6 +10,7 @@ namespace PhoneStoreAPI.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
@@ -26,8 +26,6 @@ namespace PhoneStoreAPI.Models
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
-
         public int Quantity { get; set; }
 
         public string? Description { get; set; }
@@ -35,5 +33,7 @@ namespace PhoneStoreAPI.Models
         public double ViewCount { get; set; }
 
         public bool Special { get; set; }
+
+        public virtual Category Category { get; set; }
     }
 }

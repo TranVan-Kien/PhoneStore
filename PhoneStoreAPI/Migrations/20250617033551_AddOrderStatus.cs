@@ -5,18 +5,25 @@
 namespace PhoneStoreAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIdentityToOrderId : Migration
+    public partial class AddOrderStatus : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            // Không thay đổi cột Id vì đã tồn tại và không cần thêm IDENTITY
+            migrationBuilder.AddColumn<string>(
+                name: "Status",
+                table: "Orders",
+                type: "nvarchar(20)",
+                maxLength: 20,
+                nullable: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            // Không cần rollback thay đổi
+            migrationBuilder.DropColumn(
+                name: "Status",
+                table: "Orders");
         }
     }
 }

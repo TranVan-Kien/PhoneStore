@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace PhoneStoreAPI.Models
 {
@@ -26,5 +27,8 @@ namespace PhoneStoreAPI.Models
         public string? Description { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+        [StringLength(20)] // Giới hạn độ dài, tùy chỉnh theo nhu cầu
+        public string? Status { get; set; } // Thêm thuộc tính Status
     }
 }
